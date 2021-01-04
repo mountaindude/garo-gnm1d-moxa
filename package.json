@@ -1,7 +1,7 @@
 {
-  "name": "energy-monitor-1",
+  "name": "garo1p-moxa",
   "version": "1.0.0",
-  "description": "Extracts energy metrics from a 1-phase energy meter connected via a Moxa RS485 > TCP gateway",
+  "description": "Extracts energy metrics from a Garo 1-phase energy meter connected via a Moxa RS485 > TCP gateway",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

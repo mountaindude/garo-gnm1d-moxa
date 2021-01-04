@@ -6,7 +6,7 @@ const serviceUptime = require('./lib/service_uptime');
 const slack = require('./lib/slack');
 
 globals.logger.info('--------------------------------------');
-globals.logger.info('Starting Energy monitor 1-phase');
+globals.logger.info('Starting garo1p-moxa');
 globals.logger.info(`Meter name        : ${globals.config.get('EnergyMonitor.energyMeter.name')}`);
 globals.logger.info(`Meter id          : ${globals.config.get('EnergyMonitor.energyMeter.id')}`);
 globals.logger.info(`Meter description : ${globals.config.get('EnergyMonitor.energyMeter.description')}`);
@@ -28,7 +28,7 @@ function setupTimer() {
 }
 
 function getStatusFromEnergyMonitor() {
-    globals.logger.info('Starting extraction of energy data fr..');
+    globals.logger.info('Starting extraction of energy data...');
 
     try {
         moxa.extractFromMoxa();
@@ -47,7 +47,7 @@ function getStatusFromEnergyMonitor() {
     globals.initInfluxDB();
 
     // Say hello in Slack
-    slack.slackPostMessage('👋 Energy monitor starting up - Greetings!');
+    slack.slackPostMessage('👋 Garo 1-phase energy monitor starting up - Greetings!');
 
     // Do initial query
     getStatusFromEnergyMonitor();

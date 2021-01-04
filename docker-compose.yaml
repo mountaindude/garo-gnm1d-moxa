@@ -2,12 +2,12 @@
 version: '3.3'
 services:
   emon-allm:
-    image: energy-monitor-1:1.0.0
-    container_name: energy-mon-servers
+    image: mountaindude/garo1p-moxa:1.0.0
+    container_name: garo1p-moxa
     restart: always
     volumes:
-      - "./config:/app/config"      # Make config file accessible outside of container
-      - "./logs:/app/logs"
+      - "./config:/nodeapp/config"      # Make config file accessible outside of container
+      - "./logs:/nodeapp/logs"
     environment:
       - "NODE_ENV=production"           # Read config data from production.yaml 
     logging:

@@ -107,7 +107,6 @@ steps:
 
 trigger:
   event:
-  - push
   - tag
 
 depends_on:

@@ -1,6 +1,6 @@
 'use strict';
 
-const globals = require('../globals');
+const globals = require('./globals');
 var slack = require('node-slack');
 
 // Slack config

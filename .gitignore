@@ -1,8 +1,6 @@
-node_modules/*
-config/production.json
-config/production.yaml
-config/development.yaml
-config/development.json
+src/node_modules/*
+src/config/production.*
+src/config/development.*
 npm-debug.log
 .DS_Store
 logs/*

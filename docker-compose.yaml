@@ -1,9 +1,9 @@
 # docker-compose.yml
 version: '3.3'
 services:
-  emon-allm:
-    image: mountaindude/garo1p-moxa:1.0.0
-    container_name: garo1p-moxa
+  garo1p-server-rack:
+    image: mountaindude/garo-gnm1d-moxa:1.2.0
+    container_name: garo1p-server-rack
     restart: always
     volumes:
       - "./config:/nodeapp/config"      # Make config file accessible outside of container

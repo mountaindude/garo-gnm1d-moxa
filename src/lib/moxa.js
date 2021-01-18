@@ -1,6 +1,6 @@
 'use strict';
 
-const globals = require('../globals');
+const globals = require('./globals');
 const postToInfluxdb = require('./post-to-influxdb');
 const slack = require('./slack');
 

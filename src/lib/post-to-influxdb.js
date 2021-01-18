@@ -1,6 +1,6 @@
 'use strict';
 
-const globals = require('../globals');
+const globals = require('./globals');
 
 function postStatusToInfluxdb(energyData, influxTags) {
     // Build tags structure that will be passed to InfluxDB
@@ -10,7 +10,7 @@ function postStatusToInfluxdb(energyData, influxTags) {
     globals.influx
         .writePoints([
             {
-                measurement: 'energy',
+                measurement: globals.config.get('EnergyMonitor.influxdbConfig.measurementName'),
                 tags: influxTags,
                 fields: {
                     a: energyData.a,

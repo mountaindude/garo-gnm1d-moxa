@@ -6,7 +6,7 @@
 const process = require('process');
 var moment = require('moment');
 require('moment-precise-range-plugin');
-const globals = require('../globals');
+const globals = require('./globals');
 const postToInfluxdb = require('./post-to-influxdb');
 
 function serviceUptimeStart() {

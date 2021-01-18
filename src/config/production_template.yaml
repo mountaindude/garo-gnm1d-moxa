@@ -1,44 +1,3 @@
-# garo-gnm1d-moxa
-
-## Overview
-
-This repository contains code for extracting data from [Garo 1-phase energy meter GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485).
-
-The meter expose meter readings via a RS-485 interface.  
-A [Moxa 5630](https://www.moxa.com/en/products/industrial-edge-connectivity/serial-device-servers/general-device-servers/nport-5600-series/nport-5630-16) serial-to-tcp converter is used to make the meter readings available via a TCP port.
-Once the energy data has been extracted it's stored in an InfluxDB time series database.
-
-Optionally, info and failure notifications can be sent to a Slack channel.
-
-## Technical details
-
-### Hardware
-
-- [Garo GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485)
-- [Moxa 5630-16](https://www.moxa.com/en/products/industrial-edge-connectivity/serial-device-servers/general-device-servers/nport-5600-series/nport-5630-16)
-
-Other serial-to-TCP Moxa devices might also work too - they have a pretty wide product range.
-
-Another repository contains code for Garo 3-phase meter GNM3D-RS485.
-
-### Software
-
-- The code is developed and tested against Node.js 14.5.3.
-- The service can be run as a native Node.js app, but Docker is by far the preferred option for running the service. Kubernetes also works really well, but requries more infrastructure, setup etc.
-- Docker images (mountaindude/garo-gnm1d-moxa:latest) is available from Docker hub.
-- An InfluxDB database. InfluxDB runs very nicely as a Docker container (just make sure to store the actual data outside of the InfluxDB container, so it's not lost if the InfluxDB container is recreated..).
-- Optional: A Slack account to which notifications can be sent.
-
-### Reference docs
-
-* [Garo Modbus documentation](http://www.garo.se/storage/ma/f428bc61c9f349dbaf60460a476bebff/c0514209696a49869ac640d251081456/PDF/8/108044_1_Protocol%20GNM1D%20Modbus.PDF)
-* [Moxa 5630-16 data sheet](https://www.moxa.com/getmedia/837892c5-53ec-4f1a-81d4-46c844fe5c2a/moxa-nport-5600-series-datasheet-v1.4.pdf)
-
-## Configuration file
-
-The file `production_template` can be used as a starting point when configuring the service. Many features (uptime monitoring, healthcheck pings etc) are optional and can be disabled if so desired - but keep the settings in the YAML config file anyway (errors are likely to happen otherwise).
-
-```yaml
 EnergyMonitor:
   # Logging configuration
   logLevel: info     # Log level. Possible log levels are silly, debug, verbose, info, warn, error
@@ -106,4 +65,3 @@ EnergyMonitor:
     host: <IP or Moxa serial to TCP converter>
     port: <Port on Moxa>
     deviceId: <RS485 device ID set in energy meter. 1 by default>
-```

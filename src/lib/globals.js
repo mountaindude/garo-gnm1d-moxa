@@ -7,7 +7,7 @@ var config = require('config');
 const path = require('path');
 
 // Get app version from package.json file
-var appVersion = require('./package.json').version;
+var appVersion = require('../package.json').version;
 
 // Set up logger with timestamps and colors, and optional logging to disk file
 const logTransports = [];
@@ -66,7 +66,7 @@ const influx = new Influx.InfluxDB({
     password: `${config.get('EnergyMonitor.influxdbConfig.auth.enable') ? config.get('EnergyMonitor.influxdbConfig.auth.password') : ''}`,
     schema: [
         {
-            measurement: 'energy',
+            measurement: config.get('EnergyMonitor.influxdbConfig.measurementName'),
             fields: {
                 a: Influx.FieldType.FLOAT,
                 v_ln: Influx.FieldType.FLOAT,
@@ -125,7 +125,7 @@ function initInfluxDB() {
                                     database: dbName,
                                     duration: newPolicy.duration,
                                     replication: 1,
-                                    isDefault: true,
+                                    isDefault: false,
                                 })
                                 .then(() => {
                                     logger.info(`CONFIG: Created new InfluxDB retention policy: ${newPolicy.name}`);

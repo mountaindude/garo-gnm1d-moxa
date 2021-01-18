@@ -21,7 +21,7 @@ Optionally, info and failure notifications can be sent to a Slack channel.
 
 Other serial-to-TCP Moxa devices might also work too - they have a pretty wide product range.
 
-Another repository contains code for Garo 3-phase meter GNM3D-RS485.
+[A sibling repository](https://github.com/mountaindude/garo-gnm3d-moxa) contains code for Garo 3-phase meter GNM3D-RS485.
 
 ### Software
 
@@ -33,8 +33,8 @@ Another repository contains code for Garo 3-phase meter GNM3D-RS485.
 
 ### Reference docs
 
-* [Garo Modbus documentation](http://www.garo.se/storage/ma/f428bc61c9f349dbaf60460a476bebff/c0514209696a49869ac640d251081456/PDF/8/108044_1_Protocol%20GNM1D%20Modbus.PDF)
-* [Moxa 5630-16 data sheet](https://www.moxa.com/getmedia/837892c5-53ec-4f1a-81d4-46c844fe5c2a/moxa-nport-5600-series-datasheet-v1.4.pdf)
+- [Garo Modbus documentation](http://www.garo.se/storage/ma/f428bc61c9f349dbaf60460a476bebff/c0514209696a49869ac640d251081456/PDF/8/108044_1_Protocol%20GNM1D%20Modbus.PDF)
+- [Moxa 5630-16 data sheet](https://www.moxa.com/getmedia/837892c5-53ec-4f1a-81d4-46c844fe5c2a/moxa-nport-5600-series-datasheet-v1.4.pdf)
 
 ## Configuration file
 

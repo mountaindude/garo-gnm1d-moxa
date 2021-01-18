@@ -2,6 +2,17 @@
 
 Releases are avaible on the GitHub [releases page](https://github.com/mountaindude/garo-gnm1d-moxa/releases).
 
+## 1.3.0
+
+### New features
+
+1. Added Garo firmware version and revision as both tags *and* fields in InfluxDB. (#4)
+
+### Changes, bug fixes and patches
+
+1. Fixed incorrect metadata in Docker images. (#3)
+2. Removed unneeded files from Docker image. (#5)
+
 ## 1.2.1
 
 ### New features

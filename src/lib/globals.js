@@ -87,6 +87,10 @@ const influx = new Influx.InfluxDB({
                 kvarh_pos_partial: Influx.FieldType.FLOAT,
                 kwh_pos_t1: Influx.FieldType.FLOAT,
                 kwh_pos_t2: Influx.FieldType.FLOAT,
+
+                // Energy meter version fields
+                firmware_version: Influx.FieldType.INTEGER,
+                firmware_revision: Influx.FieldType.INTEGER,
             },
             tags: tagValuesEnergy,
         },

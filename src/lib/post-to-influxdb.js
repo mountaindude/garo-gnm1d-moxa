@@ -32,6 +32,10 @@ function postStatusToInfluxdb(energyData, influxTags) {
                     kvarh_pos_partial: energyData.kvarh_pos_partial,
                     kwh_pos_t1: energyData.kwh_pos_t1,
                     kwh_pos_t2: energyData.kwh_pos_t2,
+
+                    // Energy meter version fields
+                    firmware_version: energyData.firmware_version,
+                    firmware_revision: energyData.firmware_revision,
                 },
             },
         ])

@@ -53,6 +53,8 @@ async function extractFromMoxa() {
 
         // Energy meter version fields
         data = await client.readInputRegisters(0x302, 2);
+        currStatus.firmware_version = data.buffer.readUInt16BE(0);
+        currStatus.firmware_revision = data.buffer.readUInt16BE(2);
         influxTags.firmware_version = data.buffer.readUInt16BE(0);
         influxTags.firmware_revision = data.buffer.readUInt16BE(2);
 

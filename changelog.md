@@ -2,6 +2,14 @@
 
 Releases are avaible on the GitHub [releases page](https://github.com/mountaindude/garo-gnm1d-moxa/releases).
 
+## 1.2.1
+
+### New features
+
+### Changes, bug fixes and patches
+
+1. Minor documentation updates.
+
 ## 1.2.0
 
 ### New features
@@ -12,13 +20,13 @@ Releases are avaible on the GitHub [releases page](https://github.com/mountaindu
 4. Added customizable measurement name for data stored in InfluxDB.
 5. Set up Drone.io to automatically build Docker images.
 
-### Bug fixes and patches
+### Changes, bug fixes and patches
 
 ## 1.1.0
 
 ### New features
 
-### Bug fixes and patches
+### Changes, bug fixes and patches
 
 1. Fixed some typos from 1.0 release that caused some values sent to InfluxDB having incorrect format. 
 
@@ -28,4 +36,4 @@ First release.
 
 ### New features
 
-### Bug fixes and patches
+### Changes, bug fixes and patches

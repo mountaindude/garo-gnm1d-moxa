@@ -2,7 +2,7 @@
 version: '3.3'
 services:
   garo1p-server-rack:
-    image: mountaindude/garo-gnm1d-moxa:1.2.0
+    image: mountaindude/garo-gnm1d-moxa:1.2.1
     container_name: garo1p-server-rack
     restart: always
     volumes:

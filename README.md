@@ -1,5 +1,7 @@
 # garo-gnm1d-moxa
 
+[![Build Status](https://cloud.drone.io/api/badges/mountaindude/garo-gnm1d-moxa/status.svg)](https://cloud.drone.io/mountaindude/garo-gnm1d-moxa)
+
 ## Overview
 
 This repository contains code for extracting data from [Garo 1-phase energy meter GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485).
@@ -25,8 +27,8 @@ Another repository contains code for Garo 3-phase meter GNM3D-RS485.
 
 - The code is developed and tested against Node.js 14.5.3.
 - The service can be run as a native Node.js app, but Docker is by far the preferred option for running the service. Kubernetes also works really well, but requries more infrastructure, setup etc.
-- Docker images (mountaindude/garo-gnm1d-moxa:latest) is available from Docker hub.
-- An InfluxDB database. InfluxDB runs very nicely as a Docker container (just make sure to store the actual data outside of the InfluxDB container, so it's not lost if the InfluxDB container is recreated..).
+- Docker images (mountaindude/garo-gnm1d-moxa) is available from Docker hub. It's automatically updated as new releases are done here on GitHub.
+- An InfluxDB database is needed. InfluxDB runs very nicely as a Docker container (just make sure to store the actual data outside of the InfluxDB container, so it's not lost if the InfluxDB container is recreated).
 - Optional: A Slack account to which notifications can be sent.
 
 ### Reference docs

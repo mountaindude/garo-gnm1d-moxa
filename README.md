@@ -8,11 +8,17 @@
 
 This repository contains code for extracting data from [Garo 1-phase energy meter GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485).
 
-The meter expose meter readings via a RS-485 interface.  
+The meter exposes meter readings via an RS-485 interface.  
 A [Moxa 5630](https://www.moxa.com/en/products/industrial-edge-connectivity/serial-device-servers/general-device-servers/nport-5600-series/nport-5630-16) serial-to-tcp converter is used to make the meter readings available via a TCP port.
 Once the energy data has been extracted it's stored in an InfluxDB time series database.
 
-Optionally, info and failure notifications can be sent to a Slack channel.
+Logging is done to console and optionally also disk files.
+
+Optional features:
+
+- Info and failure notifications can be sent to a Slack channel.
+- Heartbeat messages (in the form of http calls) can be sent to infrastructure monitoring tools.
+- Uptime logging to console, log files and InfluxDB. Includes metrics on uptime and memory usage.
 
 ## Technical details
 
@@ -21,7 +27,7 @@ Optionally, info and failure notifications can be sent to a Slack channel.
 - [Garo GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485)
 - [Moxa 5630-16](https://www.moxa.com/en/products/industrial-edge-connectivity/serial-device-servers/general-device-servers/nport-5600-series/nport-5630-16)
 
-Other serial-to-TCP Moxa devices might also work too - they have a pretty wide product range.
+Other serial-to-TCP Moxa devices might also work too - they have a pretty wide product range that in respects are very similar.
 
 [A sibling repository](https://github.com/mountaindude/garo-gnm3d-moxa) contains code for Garo 3-phase meter GNM3D-RS485.
 
@@ -40,14 +46,14 @@ Other serial-to-TCP Moxa devices might also work too - they have a pretty wide p
 
 ## Configuration file
 
-The file `production_template` can be used as a starting point when configuring the service. Many features (uptime monitoring, healthcheck pings etc) are optional and can be disabled if so desired - but keep the settings in the YAML config file anyway (errors are likely to happen otherwise).
+The file `config/production_template.yaml` can be used as a starting point when configuring the service. Many features (uptime monitoring, healthcheck pings etc) are optional and can be disabled if so desired - but keep the settings in the YAML config file anyway (errors are likely to happen otherwise).
 
 ```yaml
 EnergyMonitor:
   # Logging configuration
   logLevel: info     # Log level. Possible log levels are silly, debug, verbose, info, warn, error
   fileLogging: true   # true/false to enable/disable logging to disk file
-  logDirectory: log  # Subdirectory where log files are stored
+  logDirectory: ../log  # Subdirectory where log files are stored
 
   energyMeter:
     name: 'server_rack'

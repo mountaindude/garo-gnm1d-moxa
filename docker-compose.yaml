@@ -1,0 +1,17 @@
+# docker-compose.yml
+version: '3.3'
+services:
+  garo1p-server-rack:
+    image: mountaindude/garo-gnm1d-moxa:latest
+    container_name: garo1p-server-rack
+    restart: always
+    volumes:
+      - "./config:/nodeapp/config"      # Make config file accessible outside of container
+      - "./log:/nodeapp/src/log"
+    environment:
+      - "NODE_ENV=production"           # Read config data from production.yaml 
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "5m"

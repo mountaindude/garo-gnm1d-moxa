@@ -19,8 +19,8 @@ EnergyMonitor:
   # that the energy monitor is alive.
   heartbeat:
     enable: false
-    remoteURL: <URL which should be called>
-    frequency: every 30 seconds         # https://bunkat.github.io/later/parsers.html
+    remoteURL: <URL to be called>
+    frequency: every 60 seconds         # https://bunkat.github.io/later/parsers.html
 
   # Docker health checks are used when running the energy monitor as a Docker container. 
   # The Docker engine will call the container's health check REST endpoint with a set interval to determine

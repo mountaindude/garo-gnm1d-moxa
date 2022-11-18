@@ -5,9 +5,17 @@ require('moment-precise-range-plugin');
 const globals = require('./globals');
 const postToInfluxdb = require('./post-to-influxdb');
 
+const uptimeLogLevel = globals.config.get('EnergyMonitor.uptimeMonitor.logLevel');
+const uptimeInterval = globals.config.get('EnergyMonitor.uptimeMonitor.frequency');
+
+// Formatter for numbers
+const formatter = new Intl.NumberFormat('en-US');
+
+let startIterations = 0;
+
 function serviceUptimeStart() {
     function logUptime() {
-        startIterations++;
+        startIterations += 1;
         const uptimeMilliSec = process.uptime() * 1000;
         moment.duration(uptimeMilliSec);
 
@@ -47,12 +55,6 @@ function serviceUptimeStart() {
         }
     }
 
-    let uptimeLogLevel = globals.config.get('EnergyMonitor.uptimeMonitor.logLevel');
-    let uptimeInterval = globals.config.get('EnergyMonitor.uptimeMonitor.frequency');
-
-    // Formatter for numbers
-    const formatter = new Intl.NumberFormat('en-US');
-
     // Log uptime to console
     // eslint-disable-next-line no-extend-native
     Number.prototype.toTime = function (isSec) {
@@ -72,8 +74,6 @@ function serviceUptimeStart() {
 
         return fmt;
     };
-
-    let startIterations = 0;
 
     setInterval(() => {
         logUptime();

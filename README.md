@@ -117,3 +117,4 @@ EnergyMonitor:
     port: <Port on Moxa>
     deviceId: <RS485 device ID set in energy meter. 1 by default>
 ```
+

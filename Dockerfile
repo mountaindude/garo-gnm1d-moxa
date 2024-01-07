@@ -1,5 +1,5 @@
 # Build Docker image
-FROM node:19-bullseye-slim
+FROM node:20-bullseye-slim
 
 # Add metadata about the image
 LABEL maintainer="Göran Sander mountaindude@ptarmiganlabs.com"
@@ -22,7 +22,7 @@ RUN groupadd -r nodejs \
 USER nodejs
 
 # Set up Docker healthcheck
-HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD ["node", "docker-healthcheck.js"]
+#HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD ["node", "src/docker-healthcheck.js"]
 
 CMD ["node", "src/index.js"]
 

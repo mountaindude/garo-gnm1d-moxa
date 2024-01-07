@@ -3,7 +3,6 @@
 [![Release process](https://github.com/mountaindude/garo-gnm1d-moxa/actions/workflows/release-please.yml/badge.svg)](https://github.com/mountaindude/garo-gnm1d-moxa/actions/workflows/release-please.yml)
 [![Build Docker image](https://github.com/mountaindude/garo-gnm1d-moxa/actions/workflows/docker-image-build.yml/badge.svg)](https://github.com/mountaindude/garo-gnm1d-moxa/actions/workflows/docker-image-build.yml)
 
-
 ## Overview
 
 This repository contains code for extracting data from [Garo 1-phase energy meter GNM1D-RS485](http://www.garo.se/en/installation/din-rail-components/energy-meters/energymeter-1p-modbus-rs485).
@@ -33,7 +32,7 @@ Other serial-to-TCP Moxa devices might also work too - they have a pretty wide p
 
 ### Software
 
-- The code is developed and tested against Node 19.
+- The code is developed and tested against Node.js version 20.
 - The service can be run as a native Node.js app, but Docker is by far the preferred option for running the service. Kubernetes also works well, but requries more infrastructure, setup etc.
 - Docker images (mountaindude/garo-gnm1d-moxa) is available from Docker hub. It's automatically updated as new releases are done here on GitHub.
 - An InfluxDB database is needed. InfluxDB runs very nicely as a Docker container (just make sure to store the actual data outside of the InfluxDB container, so it's not lost if the InfluxDB container is recreated). InfluxDB 1.8.x is expected. InfluxDB v2 support may be coming at some point.

@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.3](https://github.com/mountaindude/garo-gnm1d-moxa/compare/garo-gnm1d-moxa-v1.0.2...garo-gnm1d-moxa-v1.0.3) (2024-01-08)
+
+
+### Miscellaneous
+
+* **deps:** update dependency snyk to v1.1268.0 ([9c0c669](https://github.com/mountaindude/garo-gnm1d-moxa/commit/9c0c669b52516242176d1e9c2031992febd7ff60))
+* **deps:** update docker/setup-buildx-action action to v3 ([5733bc7](https://github.com/mountaindude/garo-gnm1d-moxa/commit/5733bc7aea10d85f9f3b95db8d2936df8d507252))
+* **deps:** update docker/setup-qemu-action action to v3 ([9bde597](https://github.com/mountaindude/garo-gnm1d-moxa/commit/9bde5971faee9d7dfa079e28b39f062bf88debcc))
+* **deps:** update github/codeql-action action to v3 ([520fafe](https://github.com/mountaindude/garo-gnm1d-moxa/commit/520fafec7b6bf8f62257e96cc2280bf26b5b0cdb))
+* **deps:** update google-github-actions/release-please-action action to v4 ([5e32bec](https://github.com/mountaindude/garo-gnm1d-moxa/commit/5e32bec751efe9b89e274e8a7fbb3c84355d6658))
+
 ## [1.0.2](https://github.com/mountaindude/garo-gnm1d-moxa/compare/garo-gnm1d-moxa-v1.0.1...garo-gnm1d-moxa-v1.0.2) (2024-01-07)
 
 
